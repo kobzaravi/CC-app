@@ -1,5 +1,8 @@
 import { Component } from '@angular/core';
 import { HttpClient } from '@angular/common/http'
+import { Observable } from 'rxjs';
+import { Currency } from './currency';
+
 
 @Component({
   selector: 'app-root',
@@ -8,14 +11,14 @@ import { HttpClient } from '@angular/common/http'
 })
 export class AppComponent {
   
-  readonly ROOT_URL = 'https://bank.gov.ua/NBUStatService/v1/statdirectory/exchange?json'
+  readonly ROOT_URL = 'https://bank.gov.ua/NBUStatService/v1/statdirectory/exchange?json';
 
-  posts : any;
+  currencys: Observable<Currency[]> | undefined;
 
   constructor(private http: HttpClient) {}
 
-  getPosts(){
-    this.posts = this.http.get(this.ROOT_URL + '/posts')
+  getCurrencys(){
+    this.currencys = this.http.get<Currency[]>(this.ROOT_URL + '/currency?cc="USD"')
   }
 
 }
