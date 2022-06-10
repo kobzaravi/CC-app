@@ -1,15 +1,8 @@
-<div class="main-container">
-  <div class="selection-container">
-    <table>
-      <td>
-    <input type="text">
-      </td>
-      <td>=</td>
-      <td>
-    <input type="text">
-      </td>
-      <tr><button>To count!</button></tr>
-    </table>
-  </div>
+<h1>Курс НБУ на сьогодні!</h1>
+<button (click)="getPosts()">Отримати Курс</button>
+
+<div *ngFor="let post of posts | async">
+
+{{post|json}}
+
 </div>
-<router-outlet></router-outlet>
