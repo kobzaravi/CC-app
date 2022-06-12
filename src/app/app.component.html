@@ -1,8 +1,11 @@
-<h1>Курс НБУ на сьогодні!</h1>
-<button (click)="getCurrencys()">Отримати Курс</button>
+<div class="container">
+<h1>Currency convertor ! </h1>
+<button (click)="getPosts()">1.Get a course!</button>
 
-<div *ngFor="let currency of currencys | async">
+<div *ngFor="let post of posts | async">
 
-{{currency|json}}
+{{post.ccy}} {{post.buy}} 
 
 </div>
+</div>
+

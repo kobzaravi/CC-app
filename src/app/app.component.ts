@@ -1,7 +1,6 @@
-import { Component } from '@angular/core';
-import { HttpClient } from '@angular/common/http'
-import { Observable } from 'rxjs';
-import { Currency } from './currency';
+import { Component} from '@angular/core';
+import { HttpClient, HttpParams } from '@angular/common/http';
+import { Observable } from 'rxjs/';
 
 
 @Component({
@@ -9,16 +8,21 @@ import { Currency } from './currency';
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
+
 export class AppComponent {
   
-  readonly ROOT_URL = 'https://bank.gov.ua/NBUStatService/v1/statdirectory/exchange?json';
+  readonly ROOT_URL = 'https://api.privatbank.ua/p24api/pubinfo?json&exchange&coursid=5';
 
-  currencys: Observable<Currency[]> | undefined;
+  posts!: Observable<any>;
 
   constructor(private http: HttpClient) {}
 
-  getCurrencys(){
-    this.currencys = this.http.get<Currency[]>(this.ROOT_URL + '/currency?cc="USD"')
+  
+
+  getPosts(){
+    let params =  new HttpParams().set('base_ccy','UAH');
+    this.posts = this.http.get(this.ROOT_URL, {params});
+   
   }
 
 }
