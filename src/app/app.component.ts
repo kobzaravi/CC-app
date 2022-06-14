@@ -1,7 +1,7 @@
 import { Component} from '@angular/core';
 import { HttpClient, HttpParams } from '@angular/common/http';
 import { Observable } from 'rxjs/';
-
+import { NewService  } from './new.service';
 
 @Component({
   selector: 'app-root',
@@ -15,14 +15,18 @@ export class AppComponent {
 
   posts!: Observable<any>;
 
-  constructor(private http: HttpClient) {}
+  constructor(private newservice:NewService) {
+    this.newservice.getData().subscribe(data=>{
+      console.warn(data)
+    })
+  }
 
   
 
   getPosts(){
-    let params =  new HttpParams().set('base_ccy','UAH');
-    this.posts = this.http.get(this.ROOT_URL, {params});
-   
+    
+    this.posts = this.newservice.getData()
+     
   }
 
 }

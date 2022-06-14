@@ -1,0 +1,25 @@
+.container {
+    max-width: 600px;
+    padding: 0 15px;
+    margin: 0 auto;
+    border: 2.5px solid #ccc;
+    background-color: whitesmoke;
+}
+
+@media (max-width:600px){
+    .container {
+        max-width: 450px;
+    }
+}
+
+@media (max-width:450px){
+    .container {
+        max-width: 370px;
+    }
+}
+
+@media (max-width:370px){
+    .container {
+        max-width: none;
+    }
+}

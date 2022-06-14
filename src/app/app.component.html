@@ -1,10 +1,11 @@
 <div class="container">
 <h1>Currency convertor !</h1>
 
-<button (click)="getPosts()">1.Get a course!</button>
+<button class="btn btn-primary" type="submit"(click)="getPosts()">1.Get a course!</button>
+
 
 <div *ngFor="let post of posts | async">
-
+<br>
 {{1}} {{post.ccy}} {{post.sale}} {{'UAH'}} 
 
 </div>
