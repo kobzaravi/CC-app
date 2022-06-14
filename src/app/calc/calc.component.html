@@ -1,12 +1,24 @@
 <div>
    
     <h3>Calculate!</h3>
-    <input type="number" placeholder="enter number" #firstnumber>  
+    <div class="input-group mb-3">
+        <span class="input-group-text">USD</span>
+        <input type="number" placeholder="enter number" #firstnumber class="form-control" aria-label="Amount (to the nearest dollar)">
+        <span class="input-group-text">.00</span>
+      </div>
+      <div class="input-group mb-3">
+        <span class="input-group-text">EUR</span>
+        <input type="number" placeholder="enter number" #secondnumber class="form-control" aria-label="Amount (to the nearest dollar)">
+        <span class="input-group-text">.00</span>
+      </div>
+      <div class="input-group mb-3">
+        <span class="input-group-text">BTC</span>
+        <input type="number" placeholder="enter number" #thirth class="form-control" aria-label="Amount (to the nearest dollar)">
+        <span class="input-group-text">.00</span>
+      </div>
+    
     <br>
-    <br>
-    <input type="number" placeholder="choce currency"#secondnumber>  
-    <br>
-    <P></P><button (click)="Calculate(firstnumber.value, secondnumber.value)" >To count</button>
+    <P></P><button (click)="Calculate(firstnumber.value, secondnumber.value, thirth.value)" >To count</button>
     <br>
     {{result}}
 </div>
