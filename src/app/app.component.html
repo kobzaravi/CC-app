@@ -4,16 +4,8 @@
 
 <div *ngFor="let post of posts | async">
 
-{{post.ccy}} {{post.buy}} 
+{{1}} {{post.ccy}} {{post.buy}} {{'UAH'}} 
 
 </div>
 <hr>
-    <input type="number" placeholder="enter number" #firstnumber>  
-    
-    <input type="number" placeholder="choce currency"#secondnumber>  
-
-    <P></P><button >To count</button>
-    <div class="result"></div>
-    <hr>
-    R E S U L T !
-</div>
+<app-calc></app-calc>

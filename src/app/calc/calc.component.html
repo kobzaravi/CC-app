@@ -1,11 +1,13 @@
-<p>calc works!</p>
 <div>
+   
+    <h3>Calculate!</h3>
     <input type="number" placeholder="enter number" #firstnumber>  
-    
+    <br>
+    <br>
     <input type="number" placeholder="choce currency"#secondnumber>  
-
+    <br>
     <P></P><button (click)="Calculate(firstnumber.value, secondnumber.value)" >To count</button>
-    <div class="result"></div>
-    
-     
+    <br>
+    {{result}}
 </div>
+
