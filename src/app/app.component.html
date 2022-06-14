@@ -3,11 +3,19 @@
 
 <button class="btn btn-primary" type="submit"(click)="getPosts()">1.Get a course!</button>
 
+<table class="table table-bordered">
+    <tr>
+        <td>ccy</td>
+        <td>buy</td>
+        <td>sale</td>
+        <td>base_ccy</td>
+    </tr>
+    <tr *ngFor="let post of posts |async">
+        <td>{{post.ccy}}</td>
+        <td>{{post.buy}}</td>
+        <td>{{post.sale}}</td>
+        <td>{{post.base_ccy}}</td>
+    </tr>
+</table>
 
-<div *ngFor="let post of posts | async">
-<br>
-{{1}} {{post.ccy}} {{post.sale}} {{'UAH'}} 
-
-</div>
-<hr>
 <app-calc></app-calc>
